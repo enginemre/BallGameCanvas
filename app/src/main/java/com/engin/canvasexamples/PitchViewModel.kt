@@ -51,8 +51,9 @@ class PitchViewModel(
     private fun initGame(withAnimation: Boolean = false) {
         viewModelScope.launch {
             _state.update { state ->
-                val playerOneTarget = Offset(state.screenWidthPx / 2, 300f)
-                val playerTwoTarget = Offset(state.screenWidthPx / 2, state.screenHeightPx - 300f)
+                val playerOneTarget = Offset(state.screenWidthPx / 2 - 35f, 300f)
+                val playerTwoTarget =
+                    Offset(state.screenWidthPx / 2 + 35f, state.screenHeightPx - 300f)
                 val ballTarget = Offset(state.screenWidthPx / 2, state.screenHeightPx / 2)
 
                 state.copy(
